@@ -27,6 +27,7 @@ CREATE TABLE `users` (
 	`nickname` varchar(32) NOT NULL,
 	`created` datetime NOT NULL,
 	`modified` datetime NOT NULL,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	UNIQUE `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
