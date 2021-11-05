@@ -33,12 +33,12 @@ CREATE TABLE `users` (
 
 INSERT INTO questions (user_id, body, created, modified)
 VALUES
-  (1, '普段PHPのフレームワークって何使ってますか？', now(), now()),
-  (1, 'PHPにあったらいいなと思う機能ってありますか？', now(), now()),
   (1, 'みなさんはいつからPHPを書いてますか？', now(), now());
+  (1, 'PHPにあったらいいなと思う機能ってありますか？', now(), now()),
+  (1, '普段PHPのフレームワークって何使ってますか？', now(), now()),
 
 INSERT INTO answers (question_id, user_id, body, created, modified)
 VALUES
-  (3, 1, '私はLaravelです！あとたまにYiiを使っています！', now(), now()),
-  (3, 1, '僕はCakePHP！', now(), now());
+  (3, 2, '私はLaravelです！あとたまにYiiを使っています！', now(), now()),
+  (3, 3, '僕はCakePHP！', now(), now());
 
