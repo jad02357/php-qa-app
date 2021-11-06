@@ -29,7 +29,7 @@
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light background-white">
         <div class="container col-md-7 col-12">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/questions">
                 <i class="fas fa-tree"></i> PHP質問広場
             </a>
 

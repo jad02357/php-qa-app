@@ -36,6 +36,7 @@ class AppController extends Controller
      * e.g. `$this->loadComponent('Security');`
      *
      * @return void
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -45,6 +46,35 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Login',
+                'action' => 'index'
+            ],
+            'loginRedirect' => [
+                'controller' => 'Questions',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Login',
+                'action' => 'index'
+            ],
+            'unauthorized' => [
+                'controller' => 'Login',
+                'action' => 'index'
+            ],
+            'authError' => 'ログインが必要です'
+        ]);
+
+        $this->Auth->allow(['display', 'index', 'view']);
 
         /*
          * Enable the following component for recommended CakePHP security settings.
